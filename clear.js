@@ -5,7 +5,7 @@ nodelist = document.querySelectorAll('#tabGroupsDiv > div > div:nth-child(1) > d
 createTimeNodeList = document.querySelectorAll('#tabGroupsDiv > div > div:nth-child(1) > div > div:nth-child(6) > div:nth-child(1)');
 startNodelist = document.querySelectorAll('#tabGroupsDiv > div > div:nth-child(1) > div > picture.starImg');
 lockNodelist = document.querySelectorAll('#tabGroupsDiv > div > div:nth-child(1) > div > picture.lockImg');
-var startTime = new Date('2022-12-02 14:08:55');
+var startTime = new Date('2022-12-02 14:08:55'); // edit time here
 nodelist.forEach(function (ele, index, list) {
     if (startNodelist[index].style.display != 'none' || lockNodelist[index].style.display != 'none') {
         console.log('this group is start or lock, not delete')
@@ -16,10 +16,13 @@ nodelist.forEach(function (ele, index, list) {
     console.log(Date.parse(ct));
     console.log(startTime.getTime());
     if (Date.parse(ct) < startTime.getTime()) {
-        setTimeout(function () {
-            ele.click();
-            console.log('clicked')
-        },
-        1000 * index);
+        ele.click();
+        console.log('clicked')
+
+        // setTimeout(function () {
+        //     ele.click();
+        //     console.log('clicked')
+        // },
+        // 1000 * index);
     }
 });
